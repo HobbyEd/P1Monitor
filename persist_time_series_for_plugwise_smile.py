@@ -12,6 +12,7 @@ class PersistTimeSeriesForPlugwiseSmile():
         self.p1.update_data()
         self.__persist_point(self.p1.get_actueel_verbruikt())
         self.__persist_point(self.p1.get_actueel_opgewekt())
+        self.__persist_point(self.p1.get_actueel())
                     
     def persist_plugwise_smile_cumulatief(self): 
         self.p1.update_data()
