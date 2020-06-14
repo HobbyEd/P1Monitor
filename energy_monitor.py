@@ -24,7 +24,12 @@ def cumulatief_data():
         persistor.persist_plugwise_smile_cumulatief()
         time.sleep(1800)
 
-if __name__ == "actueel":
-    actueel_data()
-elif __name__ == "cumulatief": 
-    cumulatief_data()
+if __name__ == "__main__":
+    parameter =sys.argv
+    #check whether there is added a parameter to the script. If not plot the chart offline
+    if (len(parameter) == 1):
+        print (" Paramater required: values --actueel-- or --cumulatief-- ")
+    elif (str.upper(parameter[1]) == "ACTUEEL"): 
+        actueel_data()
+    elif (str.upper(parameter[1])=="CUMULATIEF"):
+        cumulatief_data()
