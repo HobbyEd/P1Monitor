@@ -10,7 +10,7 @@ class PlugwiseSmileConfig():
     def load_config_data(self):
         _plugwise_smile_config = {}
         try:
-            with io.open("plugwise_smile.conf", 'r', encoding='utf-8') as f:
+            with io.open("/home/evdillen/P1Monitor/plugwise_smile.conf", 'r', encoding='utf-8') as f:
                 _plugwise_smile_config = json.load(f)
             return _plugwise_smile_config
         except Exception:
