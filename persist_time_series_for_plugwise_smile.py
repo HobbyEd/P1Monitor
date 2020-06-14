@@ -23,7 +23,10 @@ class PersistTimeSeriesForPlugwiseSmile():
 
     def __persist_point(self, meetwaarde): 
         json_body = self.__get_point(meetwaarde)
-        self.client.write_points(json_body)
+        try: 
+            self.client.write_points(json_body)
+        except: 
+            print("Influxdb is down")
 
     def __get_point(self, meetwaarde): 
         json_body = [

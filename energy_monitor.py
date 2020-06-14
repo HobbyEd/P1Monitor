@@ -29,6 +29,7 @@ if __name__ == "__main__":
     #check whether there is added a parameter to the script. If not plot the chart offline
     if (len(parameter) == 1):
         print (" Paramater required: values --actueel-- or --cumulatief-- ")
+        actueel_data()
     elif (str.upper(parameter[1]) == "ACTUEEL"): 
         actueel_data()
     elif (str.upper(parameter[1])=="CUMULATIEF"):
