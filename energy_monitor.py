@@ -1,6 +1,7 @@
 import plugwise_smile_config as config
 import persist_time_series_for_plugwise_smile as plugwise_persistor
 import time
+import sys
 
 # haal alle configuratie data op!
 config_data = config.PlugwiseSmileConfig().load_config_data()
