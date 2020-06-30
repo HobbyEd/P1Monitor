@@ -1,6 +1,6 @@
 import json
 import io
-
+import logging
 
 class PlugwiseSmileConfig(): 
     # This function read the logfiles in the folder /Logs and return 
@@ -14,6 +14,7 @@ class PlugwiseSmileConfig():
                 _plugwise_smile_config = json.load(f)
             return _plugwise_smile_config
         except Exception:
-            print("The config file could (plugwise_smile.config) not be read. Is it in the main folder?")
+            logging.info("The config file could (plugwise_smile.config) not be read. Is it in the main folder?")
         finally:
+            logging.info("Configuration information hase been read succesfull.")
             f.close()

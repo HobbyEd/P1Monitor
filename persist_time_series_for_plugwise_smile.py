@@ -2,6 +2,7 @@ import plugwise_smile_API
 import time
 import json
 from influxdb import InfluxDBClient
+import logging
 
 class PersistTimeSeriesForPlugwiseSmile(): 
     def __init__(self, influxdb_host, influxdb_database, influxdb_user, influxdb_password, plugwise_smile_host, plugwise_smile_password): 
@@ -26,7 +27,7 @@ class PersistTimeSeriesForPlugwiseSmile():
         try: 
             self.client.write_points(json_body)
         except: 
-            print("Influxdb is down")
+            logging.info("Influxdb is down")
 
     def __get_point(self, meetwaarde): 
         json_body = [

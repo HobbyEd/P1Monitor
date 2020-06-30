@@ -2,6 +2,8 @@ import plugwise_smile_config as config
 import persist_time_series_for_plugwise_smile as plugwise_persistor
 import time
 import sys
+import logging  
+from datetime import date
 
 # haal alle configuratie data op!
 config_data = config.PlugwiseSmileConfig().load_config_data()
@@ -14,15 +16,23 @@ plugwise_smile_password = config_data['plugwise_smile']['password']
 
 persistor = plugwise_persistor.PersistTimeSeriesForPlugwiseSmile(influxdb_host,influxdb_database, influxdb_user,influxdb_password,plugwise_smile_host,plugwise_smile_password)
 
+def __initieer_logging(filename):
+    logging.basicConfig(filename=filename, level=logging.INFO)
+    logging.info ("Gestart op: %s", date.today())
+
 def actueel_data(): 
+    __initieer_logging("actueel.log")
     while True: 
         persistor.persist_plugwise_smile_actueel()
         time.sleep(2)
 
 def cumulatief_data(): 
+    __initieer_logging("cumulatief.log")
     while True: 
         persistor.persist_plugwise_smile_cumulatief()
         time.sleep(1800)
+
+actueel_data()
 
 if __name__ == "__main__":
     parameter =sys.argv
