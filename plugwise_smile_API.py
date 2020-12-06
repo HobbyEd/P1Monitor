@@ -86,5 +86,5 @@ class Smile:
             else: 
                 self._actueel = {'meeting_type': meeting_type.ACTUEEL.value, 'waarde': self._actueel_verbruikt['waarde'], 'time_stamp': self._actueel_verbruikt['time_stamp'], 'eenheid': self._actueel_verbruikt['eenheid']}            
         except: 
-            logging.info("Er is iets fout gegaan met het ophalen van gegevens uit de Smile. ")
+            logging.error("Er is iets fout gegaan met het ophalen van gegevens uit de Smile. ")
 
