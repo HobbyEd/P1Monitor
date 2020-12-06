@@ -1,4 +1,5 @@
 plugwise_smile.conf
-__pycache__/*
 energy_monitor_actueel.log
 energy_monitor_cumulatief.log
+__pycache__/*
+logs/*

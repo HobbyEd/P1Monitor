@@ -16,7 +16,7 @@ plugwise_smile_host = config_data['plugwise_smile']['host']
 plugwise_smile_password = config_data['plugwise_smile']['password']
 
 def actueel_data(): 
-    logging.basicConfig(filename='energy_monitor_actueel.log', level=logging.INFO)
+    logging.basicConfig(filename='./logs/energy_monitor_actueel.log', level=logging.INFO)
     logging.info("%s >>Actuele data ophalen gestart.", datetime.now())
     persistor = plugwise_persistor.PersistTimeSeriesForPlugwiseSmile(influxdb_host,influxdb_database, influxdb_user,influxdb_password,plugwise_smile_host,plugwise_smile_password)
     
@@ -25,7 +25,7 @@ def actueel_data():
         time.sleep(2)
 
 def cumulatief_data(): 
-    logging.basicConfig(filename='energy_monitor_cumulatief.log', level=logging.INFO)
+    logging.basicConfig(filename='./logs/energy_monitor_cumulatief.log', level=logging.INFO)
     logging.info("%s >>Cumulatief data ophalen gestart.", datetime.now())
     persistor = plugwise_persistor.PersistTimeSeriesForPlugwiseSmile(influxdb_host,influxdb_database, influxdb_user,influxdb_password,plugwise_smile_host,plugwise_smile_password)
     while True: 
