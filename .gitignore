@@ -1,4 +1,4 @@
 plugwise_smile.conf
-__pycache__/persist_time_series_for_plugwise_smile.cpython-38.pyc
-__pycache__/plugwise_smile_API.cpython-38.pyc
-__pycache__/plugwise_smile_config.cpython-38.pyc
+__pycache__/*
+energy_monitor_actueel.log
+energy_monitor_cumulatief.log
